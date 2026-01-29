@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join | Add Task</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
+
+  <link rel="stylesheet" href="css/css_main/add-task/add-task-form.css">
+  <link rel="stylesheet" href="css/css_main/add-task/contact-elements.css">
+  <link rel="stylesheet" href="css/css_main/add-task/buttons.css">
+  <link rel="stylesheet" href="css/css_main/add-task/navigation.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/css_main/sidebar/sidebar.css" />
+  <link rel="stylesheet" href="css/css_main/topbar/topbar.css" />
+  <link rel="stylesheet" href="css/css_responsive/sidebar/sidebar-responsive.css">
+  <link rel="stylesheet" href="css/css_responsive/add-task/add-task-responsive.css" />
+  <link rel="stylesheet" href="css/css_responsive/topbar/topbar-responsive.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="assets/img/logo_dark.png" alt="Join Logo" class="sidebar-logo" />
+    
+    <nav class="sidebar-nav">
+      <a href="summary.html" class="nav-link summary-link">
+        <img src="assets/img/summary.png" alt="Summary Icon" />
+        <span class="responsive-font">Summary</span>
+      </a>
+      <a href="add-task.html" class="nav-link add-task-link">
+        <img src="assets/img/add-task.png" alt="Add Task Icon" />
+        <span class="responsive-font">Add Task</span>
+      </a>
+      <a href="board.html" class="nav-link board-link">
+        <img src="assets/img/board.png" alt="Board Icon" />
+        <span class="responsive-font">Board</span>
+      </a>
+      <a href="contacts.html" class="nav-link contacts-link">
+        <img src="assets/img/contacts.png" alt="Contacts Icon" />
+        <span class="responsive-font">Contacts</span>
+      </a>
+    </nav>
+
+    <footer class="sidebar-footer" id="sidebar-footer">
+      <div class="sidebar-footer-links responsive-hide-on-mobile">
+        <a class="nav-link privacy-policy-link" href="./privacy-policy.html">Privacy Policy</a>
+        <a class="nav-link legal-link" href="legal.html">Legal Notice</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="topbar">
+    <span class="topbar-title">Kanban Project Management Tool</span>
+
+    <img class="topbar-logo" src="assets/img/logo-start.png" alt="">
+    <div class="topbar-icons">
+      <a class="help-button" id="help-button" href="help.html"><img src="assets/img/help.png" alt="Help Icon" class="topbar-icon" /></a>
+      <div class="topbar-user"></div>
+    </div>
+  </div>
+
+  <div id="menuID" class="menu d-none">
+    <a class="d-none" id="help-button-responsive" href="./help.html">Help</a>
+    <a href="./legal.html">Legal Notice</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./index.html" id="log-out-buttonID">Log out</a>
+  </div>
+
+  <div class="page-wrapper">
+
+    <main class="add-task-main">
+      <h1>Add Task</h1>
+
+      <form id="add-task-form">
+        <div class="add-task-form-content">
+          <label class="required" for="title">Title</label>
+          <input class="title-input title-size" type="text" id="title" placeholder="Enter a title" required />
+          <div id="error-title" class="error-message"></div>
+
+          <label for="description">Description</label>
+          <textarea rows="4" cols="50" class="description-input" id="description"
+            placeholder="Enter a description"></textarea>
+
+          </textarea>
+          <div class="input-container">
+            <label class="required" for="due-date">Due date</label>
+            <input type="date" id="due-date" placeholder="TT.MM.JJJJ" required>
+
+
+          </div>
+          <div id="error-due-date" class="error-message"></div>
+        </div>
+
+        <div class="grey-bar"></div>
+
+        <div class="add-task-form-content">
+          <label>Priority</label>
+          <div id="priority-buttons">
+            <label id="urgent-btn">
+              <input type="radio" name="priority">
+              <span>Urgent <img src="assets/img/urgent-btn-icon.png" alt="urgent-icon" /></span>
+            </label>
+            <label id="medium-btn">
+              <input checked type="radio" name="priority">
+              <span>Medium <img src="assets/img/medium-btn-icon.png" alt="medium-icon" /></span>
+            </label>
+            <label id="low-btn">
+              <input type="radio" name="priority">
+              <span>Low <img src="assets/img/low-btn-icon.png" alt="low-icon" /></span>
+            </label>
+          </div>
+
+          <label>Assigned to</label>
+
+          <div class="contacts-dropdown" id="contacts-dropdown">
+            <div class="contacts-dropdown-inner" id="contacts-selected">
+              Select contact(s) to assign
+            </div>
+            <div class="contacts-dropdown-panel d-none" id="contacts-dropdown-panel">
+              <div class="contacts-dropdown-list" id="contacts-dropdown-list"></div>
+            </div>
+          </div>
+          <div id="selected-contact-insignias"></div>
+
+
+          <label class="required" for="category">Category</label>
+          <select id="category" required>
+            <option value="" disabled selected>Select task category</option>
+            <option value="Technical Task">Technical Task</option>
+            <option value="User Story">User Story</option>
+          </select>
+          <div id="error-category" class="error-message"></div>
+
+          <label for="subtask">Subtasks</label>
+          <div class="subtask-wrapper">
+            <input type="text" id="subtask" placeholder="Add new subtask" autocomplete="off" />
+            <button type="button" class="subtask-button">+</button>
+          </div>
+
+          <ul id="subtask-list"></ul>
+
+          <span class="required-explain-responsive">This field is required</span>
+
+          <div class="add-task-create-and-clear-btn">
+            <button type="reset" id="clear-btn">
+              Clear <span class="btn-cross">✖</span>
+            </button>
+
+
+            <button id="create-task-btn" type="button" class="btn-create-task">Create Task ✔</button>
+          </div>
+
+        </div>
+      </form>
+
+      <span class="required-explain">This field is required</span>
+    </main>
+  </div>
+
+  <div id="confirmation-window" class="confirmation-window d-none">
+    <span>There should be a suitable message here</span>
+  </div>
+
+  <script type="module" src="js/add-task/add-task-main.js"></script>
+  <script type="module" src="./js/help/main.js"></script>
+</body>
+</html>

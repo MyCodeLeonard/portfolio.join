@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join | Contacts</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
+
+    <link rel="stylesheet" href="css/css_main/contacts/contacts.css">
+    <link rel="stylesheet" href="css/css_main/contacts/lightbox.css">
+    <link rel="stylesheet" href="css/css_main/contacts/navigation.css">
+    <link rel="stylesheet" href="css/css_main/sidebar/sidebar.css">
+    <link rel="stylesheet" href="css/css_main/topbar/topbar.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    
+    <link rel="stylesheet" href="css/css_responsive/contacts/contacts-responsive.css">
+    <link rel="stylesheet" href="css/css_responsive/topbar/topbar-responsive.css">
+    <link rel="stylesheet" href="css/css_responsive/sidebar/sidebar-responsive.css">
+</head>
+
+<body id="body">
+    <div class="sidebar">
+        <img src="assets/img/logo_dark.png" alt="Join Logo" class="sidebar-logo" />
+
+        <nav class="sidebar-nav">
+            <a href="summary.html" class="nav-link summary-link">
+                <img src="assets/img/summary.png" alt="Summary Icon" />
+                <span class="responsive-font">Summary</span>
+            </a>
+            <a href="add-task.html" class="nav-link add-task-link">
+                <img src="assets/img/add-task.png" alt="Add Task Icon" />
+                <span class="responsive-font">Add Task</span>
+            </a>
+            <a href="board.html" class="nav-link board-link">
+                <img src="assets/img/board.png" alt="Board Icon" />
+                <span class="responsive-font">Board</span>
+            </a>
+            <a href="contacts.html" class="nav-link contacts-link">
+                <img src="assets/img/contacts.png" alt="Contacts Icon" />
+                <span class="responsive-font">Contacts</span>
+            </a>
+        </nav>
+
+        <footer class="sidebar-footer" id="sidebar-footer">
+            <div class="sidebar-footer-links responsive-hide-on-mobile">
+                <a class="nav-link privacy-policy-link" href="./privacy-policy.html">Privacy Policy</a>
+                <a class="nav-link legal-link" href="legal.html">Legal Notice</a>
+            </div>
+        </footer>
+    </div>
+
+    <div class="topbar">
+        <span class="topbar-title">Kanban Project Management Tool</span>
+
+        <img class="topbar-logo" src="assets/img/logo-start.png" alt="">
+        <div class="topbar-icons">
+            <a class="help-button" id="help-button" href="help.html"><img src="assets/img/help.png" alt="Help Icon"
+                    class="topbar-icon" /></a>
+            <div class="topbar-user"></div>
+        </div>
+    </div>
+
+    <div id="menuID" class="menu d-none">
+        <a class="d-none" id="help-button-responsive" href="./help.html">Help</a>
+        <a href="./legal.html">Legal Notice</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./index.html" id="log-out-buttonID">Log out</a>
+    </div>
+
+    <main id="contacts-main">
+        <button id="responsive-small-edit" class="d-none">
+            <img src="assets/img/responsive-delete-edit.png" alt="">
+        </button>
+
+        <button id="responsive-small-add" class="d-none">
+            <img src="assets/img/person_add.png" alt="person-icon">
+        </button>
+
+        <div id="current-btns-responsive" class="current-btns-responsive d-none">
+            <button id="current-edit-responsive">
+                <img src="assets/img/edit.png" alt="edit-icon">
+                Edit
+            </button>
+
+            <button id="current-delete-responsive">
+                <img src="assets/img/delete.png" alt="delete-icon" />
+                Delete
+            </button>
+        </div>
+
+        <div id="left-section">
+            <button id="add-contact-btn-big">
+                <span>Add new Contact</span>
+                <img src="assets/img/person_add.png" alt="person-icon" />
+            </button>
+
+            <div id="contacts-list-wrapper"></div>
+        </div>
+        <div id="add-contact-overlay" class="overlay d-none">
+            <div class="overlay-bg" id="overlay-bg-addContact">
+                <div class="overlay-box">
+                    <div class="overlay-left">
+                        <img src="assets/img/logo_dark.png" class="join-logo-left">
+                        <h2 class="add-contact-h2">Add contact</h2>
+                        <span>Tasks are better with a team!</span>
+                    </div>
+                    <div class="overlay-right">
+                        <span class="close-overlay-btn" id="close-overlay-btn-addContact">✖</span>
+                        <div class="add-initial-circle" id="add-initial-circle"><img src="assets/img/person_add.png"
+                                alt="">
+                        </div>
+                        <div id="create-contact-form">
+                            <div>
+                                <input id="new-name" type="text" placeholder="Name">
+                                <div class="error-message name-error"></div>
+                            </div>
+
+                            <div>
+                                <input id="new-email" type="email" placeholder="Email">
+                                <div class="error-message email-error"></div>
+                            </div>
+
+                            <div>
+                                <input id="new-phone" type="tel" placeholder="Phone">
+                                <div class="error-message phone-error"></div>
+                            </div>
+
+                            <div class="button-row">
+                                <button type="button" id="cancel-btn">Cancel ✖</button>
+                                <button id="create-contact-btn" type="submit">Create contact ✔</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-section" class="d-none">
+
+            <div class="contact-details-haeder">
+                <div class="responsive-wrapper">
+                    <h1>Contacts</h1>
+                    <button id="back-icon"><img src="assets/img/arrow_left.png" alt="back-icon"></button>
+                </div>
+                <div class="split-contact-header"></div>
+                <span>Better with a team</span>
+            </div>
+
+            <div id="showed-current-contact" class="d-none">
+                <div class="current-top">
+                    <div id="current-icon">AM</div>
+
+                    <div class="flex-column">
+                        <div id="current-name">Dieter Murr</div>
+
+                        <div id="current-btns" class="current-btns">
+                            <button id="current-edit">
+                                <img src=" assets/img/edit.png" alt="edit-icon">
+                                Edit
+                            </button>
+
+                            <button id="current-delete">
+                                <img src="assets/img/delete.png" alt="delete-icon" />
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="current-bottom">
+                    <p>Contact information</p>
+
+                    <div class="current-information">
+                        <span>Email</span>
+                        <a id="current-mail"><span>Test@mail.de</span></a>
+
+                        <span>Phone</span>
+                        <a id="current-phone"><span>+49xxxxxxxxx0235</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lightbox-overlay" class="d-none">
+            <div id="lightbox">
+                <button class="close-button" id="close-btn-edit-lightbox">&times;</button>
+                <div class="lightbox-left">
+                    <img src="assets/img/logo_dark.png" class="join-logo-left">
+                    <h2 class="edit-contact-h2">Edit contact</h2>
+                </div>
+                <div class="lightbox-right">
+                    <div class="edit-initial-circle" id="edit-initial-circle"></div>
+
+                    <div class="editing-lighbox">
+                        <div>
+                            <input id="edit-name" type="text" placeholder="Name">
+                            <div class="error-message name-error"></div>
+                        </div>
+
+                        <div>
+                            <input id="edit-email" type="email" placeholder="Email">
+                            <div class="error-message email-error"></div>
+                        </div>
+
+                        <div>
+                            <input id="edit-phone" type="tel" placeholder="Phone">
+                            <div class="error-message phone-error"></div>
+                        </div>
+
+                        <div class="btns-lighbox">
+                            <button id="deleteBtn">Delete ✖</button>
+                            <button id="saveBtn">Save ✔</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="query-window" class="overlay-body d-none">
+        <div id="overlay-window" class="overlay-window">
+            <span>Would you really like to delete this contact?</span>
+            <div class="overlay-buttons-div">
+                <button id="yes-delete-button">Yes</button>
+                <button id="cancel-delete-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmation-window" class="confirmation-window d-none">
+        <span>Contact successfully saved!</span>
+    </div>
+
+    <script type="module" src="./js/help/main.js"></script>
+    <script type="module" src="./js/contacts/main.js"></script>
+</body>
+</html>

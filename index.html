@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | Login</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/css_main/login/intro.css">
+  <link rel="stylesheet" href="css/css_main/login/login.css" />
+  <link rel="stylesheet" href="css/css_responsive/login/login-responsive.css">
+  <link rel="stylesheet" href="css/css_responsive/login/intro-responsive.css">
+  <link rel="stylesheet" href="css/css_main/contacts/query-overlay.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="page-transition" class="page-transition hidden">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <span>Loading Dashboard...</span>
+    </div>
+  </div>
+
+
+  <div class="login-page-wrapper">
+
+    <img class="starting-logo" src="assets/img/logo-start.png" alt="Join Logo">
+
+    <img class="starting-logo-responsive" src="assets/img/logo_dark.png" alt="Join Logo">
+
+    <div class="sign-up-wrapper">
+      <span>Not a Join user?</span>
+      <a href="register.html" class="sign-up-btn">Sign up</a>
+    </div>
+
+    <div class="login-box">
+
+      <h1 class="underline">Log in</h1>
+
+      <form id="loginForm" novalidate>
+
+        <div class="input-wrapper">
+          <input type="email" class="email-input" id="email-input" placeholder="Email" />
+          <div class="error-message email-error"></div>
+        </div>
+
+        <div class="input-wrapper">
+          <div class="passwort-input-button-div">
+            <input type="password" class="password-input" id="password-input" placeholder="Password" />
+            <div id="show-hide-password" class="d-none"></div>
+          </div>
+          <div class="error-message password-error"></div>
+        </div>
+
+        <div class="button-row">
+          <button type="button" id="userLogin" class="btn-primary">Log in</button>
+          <button type="button" id="guestLogin" class="btn-secondary">Guest Log in</button>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="sign-up-wrapper-responsive">
+      <span>Not a Join user?</span>
+      <a href="register.html" class="sign-up-btn">Sign up</a>
+    </div>
+
+  </div>
+  <footer id="login-footer">
+    <div class="footer-links">
+      <a id="privacyPolicyID" href="privacy-policy.html">Privacy Policy</a>
+      <a id="legalID" href="legal.html">Legal Notice</a>
+    </div>
+  </footer>
+
+  <div id="confirmation-window" class="confirmation-window d-none">
+    <span></span>
+  </div>
+
+  <script type="module" src="js/login/main.js"></script>
+  <script type="module" src="js/multiple-application/changeSidebarStarter.js"></script>
+  <script type="module" src="js/multiple-application/show-hide-password.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | Summary</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/css_main/sidebar/sidebar.css" />
+  <link rel="stylesheet" href="/css/css_main/topbar/topbar.css" />
+  <link rel="stylesheet" href="css/css_main/summary/summary.css" />
+  <link rel="stylesheet" href="css/css_responsive/topbar/topbar-responsive.css">
+  <link rel="stylesheet" href="css/css_responsive/sidebar/sidebar-responsive.css">
+  <link rel="stylesheet" href="css/css_responsive/summary/summary-responsive.css">
+</head>
+
+<body class="hidden">
+  <div id="summary-loader" style="display: none;">
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="sidebar">
+    <img src="assets/img/logo_dark.png" alt="Join Logo" class="sidebar-logo" />
+    <nav class="sidebar-nav">
+      <a href="summary.html" class="nav-link summary-link">
+        <img src="assets/img/summary.png" alt="Summary Icon" />
+        <span class="responsive-font">Summary</span>
+      </a>
+      <a href="add-task.html" class="nav-link add-task-link">
+        <img src="assets/img/add-task.png" alt="Add Task Icon" />
+        <span class="responsive-font">Add Task</span>
+      </a>
+      <a href="board.html" class="nav-link board-link">
+        <img src="assets/img/board.png" alt="Board Icon" />
+        <span class="responsive-font">Board</span>
+      </a>
+      <a href="contacts.html" class="nav-link contacts-link">
+        <img src="assets/img/contacts.png" alt="Contacts Icon" />
+        <span class="responsive-font">Contacts</span>
+      </a>
+    </nav>
+    <footer class="sidebar-footer" id="sidebar-footer">
+      <div class="sidebar-footer-links responsive-hide-on-mobile">
+        <a class="nav-link privacy-policy-link" href="./privacy-policy.html">Privacy Policy</a>
+        <a class="nav-link legal-link" href="legal.html">Legal Notice</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="topbar">
+    <span class="topbar-title">Kanban Project Management Tool</span>
+    <img class="topbar-logo" src="assets/img/logo-start.png" alt="">
+    <div class="topbar-icons">
+      <a class="help-button" id="help-button" href="help.html"><img src="assets/img/help.png" alt="Help Icon" class="topbar-icon" /></a>
+      <div class="topbar-user"></div>
+    </div>
+  </div>
+
+  <div id="menuID" class="menu d-none">
+    <a class="d-none" id="help-button-responsive" href="./help.html">Help</a>
+    <a href="./legal.html">Legal Notice</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./index.html" id="log-out-buttonID">Log out</a>
+  </div>
+
+  <div class="summary-header">
+    <h1>Join 360</h1>
+    <div class="summary-divider"></div>
+    <span class="summary-title">Key Metrics at a Glance</span>
+  </div>
+
+  <main class="summary-main">
+    <div class="summary-content-wrapper">
+      <div class="summary-left">
+        <div class="display-flex">
+          <div id="todo" class="summary-box" onclick="window.location.href='board.html'">
+            <img src="assets/img/pencil-icon.png" alt="pencil-icon" />
+            <div class="flex-column">
+              <h2>0</h2>
+              <span>To-do</span>
+            </div>
+          </div>
+
+          <div id="done" class="summary-box " onclick="window.location.href='board.html'">
+            <img src="assets/img/check-icon.png" alt="check-icon" />
+            <div class="flex-column">
+              <h2>0</h2>
+              <span>Done</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-box urgent-wrapper" onclick="window.location.href='board.html'">
+          <div id="urgent" class="flex-column">
+            <img src="assets/img/urgent-icon.png" alt="urgent-icon" />
+            <div class="flex-column">
+              <h2>0</h2>
+              <span>Urgent</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex-column">
+            <p id="deadline-date"></p>
+            <span id="deadline-title">Upcoming Deadline</span>
+          </div>
+        </div>
+
+        <div class="display-flex" onclick="window.location.href='board.html'">
+          <div id="atBoard" class="summary-box">
+            <h2>0</h2>
+            <span>Tasks in Board</span>
+          </div>
+          <div id="onProgress" class="summary-box">
+            <h2>0</h2>
+            <span>Task in Progress</span>
+          </div>
+          <div id="awaitFeedback" class="summary-box">
+            <h2>0</h2>
+            <span>Awaiting Feedback</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="summary-greeting-wrapper">
+        <span id="summary-greeting-time"></span>
+        <span id="summary-greeting-name"></span>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="./js/summary/summary.js"></script>
+  <script type="module" src="js/help/main.js"></script>
+</body>
+</html>
