@@ -1,0 +1,30 @@
+@media (max-width: 1100px) {
+    .topbar {
+        height: 55px;
+        padding: 1rem;
+        margin-left: 0;
+        box-shadow: 0px 4px 6px var(--clr-300);
+    }
+
+    .topbar-title {
+        display: none;
+    }
+
+    .topbar-logo {
+        display: block;
+        max-width: 50px;
+    }
+
+    .topbar-user {
+        width: 40px;
+        height: 40px;
+    }
+
+    .topbar-icons a {
+        display: none;
+    }
+
+    .menu a {
+        display: flex;
+    }
+}

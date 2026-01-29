@@ -1,0 +1,39 @@
+.legal-main {
+  margin-left: 22.138rem;
+  padding: 4rem;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: var(--fs-27);
+  margin: 32px 0 10px 0;
+}
+
+.legal-main p {
+  line-height: 1.6;
+  color: var(--clr-700);
+}
+
+.legal-main a {
+  color: var(--clr-500);
+  text-decoration: none;
+}
+
+.legal-main a:hover {
+  text-decoration: underline;
+}
+
+.legal-main .date {
+  margin-top: 60px;
+  font-weight: bold;
+  color: var(--clr-700);
+}
+
+.legal-link{
+  background-color: var(--clr-900);
+}
+
+.blue-print {
+  color: var(--clr-500);
+}

@@ -1,0 +1,210 @@
+@media (min-width: 1920px) {
+  select#category {
+    min-height: 50px;
+    min-width: 480px;
+    font-size: calc(var(--fs-20) * 1);
+  }
+
+  .add-task-main {
+    margin: 0 auto;
+    padding: 4rem;
+  }
+
+  .board-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 47px;
+  }
+
+  #sidebar-footer {
+    display: none;
+  }
+
+  .board-main {
+    margin-left: 0;
+    padding: 10px 10px 8vh 10px;
+  }
+
+  .board-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .board-header a {
+    text-decoration: none;
+  }
+
+  .responsive-d-none {
+    display: none;
+  }
+
+  .responsive-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 55px;
+    font-size: 36px;
+  }
+
+  #add-task-button-responsive {
+    padding: 8px 13.62px;
+  }
+
+  .search-task-field {
+    display: flex;
+    justify-content: center;
+  }
+
+  .responsive-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .add-task-button {
+    flex: 0;
+    width: 35px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  #board {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "to-do"
+      "to-do-tasks"
+      "in-progress"
+      "in-progress-tasks"
+      "await"
+      "await-tasks"
+      "done"
+      "done-tasks";
+    gap: 20px;
+    padding: 0px 0 4rem 0;
+    flex: 0;
+  }
+
+  .task-column:not(:has(*))::after{
+    height: 224px;
+  }
+
+  .to-do-field,
+  .in-progress-field,
+  .await-field,
+  .done-field {
+    justify-content: space-between;
+  }
+
+  #form-add-edit-task {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    overflow: auto;
+    padding-right: 12px;
+    margin-bottom: 24px;
+    padding-left: 8px;
+  }
+
+  #subtask-list {
+    margin-bottom: -16px;
+  }
+
+  #clear-btn{
+    display: none;
+  }
+
+  .btn-create-task{
+    position: absolute;
+    bottom: 17px;
+    right: 48px;
+    height: 56px;
+  }
+
+  .add-task-create-and-clear-btn{
+    padding: 0;
+  }
+}
+
+@media (max-height: 670px) {
+  .assigned-list {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 600px){
+  #form-add-edit-task {
+    padding: 2rem;
+    width: 85%;
+  }
+
+  .btn-create-task{
+    font-size: 16px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 510px) {
+  #add-task-form *, #add-task-form *::placeholder, .required-explain{
+    font-size: var(--fs-16);
+  }
+
+  .create-task-btn{
+    bottom: 11px;
+  }
+
+  .title-input, #due-date, .contacts-dropdown, #category, .subtask-wrapper, #subtask{
+    height: 32px;
+    min-height: 32px;
+  }
+
+  h1{
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 430px){
+  #form-add-edit-task{
+    padding: 1rem;
+    width: 92%;
+  }
+
+  #urgent-btn, #medium-btn, #low-btn{
+    text-wrap-mode: nowrap;
+    height: 32px;
+  }
+  
+  .btn-create-task{
+    height: 36px;
+    right: 20px;
+    width: auto;
+    padding: 0 8px;
+    bottom: 7px;
+  }
+}
+
+@media(max-width: 360px){
+  #priority-buttons{
+    gap: 0;
+  }
+}
+
+@media (min-width: 1101px) {
+  #responsive-link-add-task{
+    display: none;
+  }
+}

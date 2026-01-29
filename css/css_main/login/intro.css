@@ -1,0 +1,41 @@
+.sign-up-wrapper,
+.footer-links {
+    opacity: 0;
+    animation: opacityOne 1.25s 0.75s ease forwards;
+}
+
+.starting-logo,
+.starting-logo-responsive {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    animation: slideToLeftCorner 1.25s 0.75s ease forwards;
+    z-index: 2;
+    background-color: white;
+    object-fit: none;
+}
+
+@keyframes slideToLeftCorner {
+    to {
+        width: 100px;
+        height: 120px;
+        top: 32px;
+        left: 20px;
+        transform: translate(0, 0);
+        background-color: transparent;
+        object-fit: contain;
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOne {
+    to {
+        opacity: 1;
+    }
+}

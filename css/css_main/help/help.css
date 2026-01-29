@@ -1,0 +1,39 @@
+.help-main {
+    margin-left: 22.138rem;
+    padding: 4rem;
+    font-size: var(--fs-16);
+}
+
+.help-button {
+    display: none;
+}
+
+.list-div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 16px 0;
+}
+
+.listing-point-div {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description-div h3 {
+    margin: 0;
+}
+
+.join-color-span {
+    color: var(--clr-500);
+}
+
+.floating-back-arrow {
+    position: fixed;
+    right: 15px;
+}
+
+ .floating-back-arrow a >img{
+    cursor: pointer;
+ }

@@ -1,0 +1,172 @@
+/* Einheitliche HTML und Body Struktur */
+html {
+    font-size: 65.5%;
+    /* Festsetzung der Font size. 1rem = 10px */
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--clr-200);
+}
+
+
+/* Einheitliche Farben und Font Size über das gesamte Projekt */
+:root {
+    --clr-200: #f5f6f7;
+    /* für Body und Backgrounds */
+
+    --clr-300: #d1d1d1;
+    /* für Border */
+
+    --clr-400: #a8a8a8;
+    /* für helle Font */
+
+    --clr-500: #29abe3;
+    /* für blaue Font und Balken */
+
+    --clr-600: #3c516f;
+    /* für sidebar Hover */
+
+    --clr-700: #2A3647;
+    /* für Sidebar */
+
+    --clr-900: #091930;
+    /* für Buttons */
+
+    --fs-16: 16px;
+    --fs-20: 20px;
+    --fs-21: 21px;
+    --fs-24: 24px;
+    --fs-27: 27px;
+    --fs-36: 36px;
+    --fs-47: 47px;
+    --fs-61: 61px;
+    --fs-64: 64px;
+}
+
+
+/* Andere allgemeine Klassen zur Mehrfach nutzung */
+.display-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ju-co-normal {
+    justify-content: normal;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.d-none {
+    display: none;
+}
+
+
+.d-flex {
+    display: flex;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: var(--fs-61);
+    margin: 0;
+}
+
+h3 {
+    font-size: 20px;
+    color: var(--clr-700);
+    margin: 0;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: var(--fs-16);
+    margin: 0;
+    min-height: 20px;
+    display: block;
+    /* visibility: hidden; */
+}
+
+.error-border{
+    border: solid 2px, red;
+}
+.successful-border {
+    border: solid 2px, green;
+}
+
+.neutral-border {
+    border: solid 2px, white;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.custom-checkbox {
+    display: none;
+}
+
+.custom-checkbox+label {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.custom-checkbox:checked+label::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #000000;
+}
+
+.confirmation-window {
+    position: fixed;
+    align-self: center;
+    overflow-wrap: anywhere;
+    top: 32px;
+    display: none;
+    background-color: var(--clr-700);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-size: 20px;
+    z-index: 9999;
+    justify-self: center;
+    text-align: center;
+}
+
+@media (max-width: 1100px) {
+    .confirmation-window {
+        top: 24px;
+        padding: 10px 16px;
+        border-radius: 14px;
+        font-size: 16px;
+        max-width: 90vw;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}

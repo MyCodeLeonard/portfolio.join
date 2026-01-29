@@ -1,0 +1,124 @@
+#priority-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#urgent-btn,
+#medium-btn,
+#low-btn {
+    flex: 1;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    font-size: var(--fs-20);
+    font-weight: 500;
+    cursor: pointer;
+    max-width: 136px;
+    background-color: white;
+    color: var(--clr-900);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#urgent-btn:hover,
+#medium-btn:hover,
+#low-btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#urgent-btn input:checked + span img,
+#medium-btn input:checked + span img,
+#low-btn input:checked + span img {
+    filter: brightness(0) invert(1);
+}
+
+#urgent-btn input:checked + span,
+#medium-btn input:checked + span,
+#low-btn input:checked + span {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#urgent-btn input:checked + span{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    background-color: #c93939;
+    color: white;
+}
+
+#medium-btn input:checked + span{
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ffaa00;
+    color: white;
+}
+
+#low-btn input:checked + span{
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #5dc43e;
+    color: white;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.add-task-create-and-clear-btn, .edit-task-cancel-and-save-btn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+#clear-btn, #editing-cancel-btn, .btn-edit-save {
+    height: 56px;
+    border-radius: 10px;
+    font-size: var(--fs-20);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    border: 2px, solid, var(--clr-700);
+
+    font-weight: 600;
+    width: 170px;
+}
+
+.btn-create-task:hover, .btn-edit-save:hover {
+    color: var(--clr-900);
+    background-color: var(--clr-200);
+}
+
+.btn-create-task, .btn-edit-save{
+    color: #ffffff;
+    background-color: var(--clr-700);
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: var(--fs-20);
+    padding: 0 16px;
+    border: 2px, solid, var(--clr-700);
+
+    cursor: pointer;
+    width: 170px;
+    text-wrap-mode: nowrap;
+}
+
+#clear-btn:hover, #editing-cancel-btn:hover {
+    color: #ffffff;
+    background-color: var(--clr-500);
+    border-color: var(--clr-500);
+}

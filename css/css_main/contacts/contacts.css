@@ -1,0 +1,291 @@
+#contacts-main {
+    display: flex;
+    height: calc(100vh - 125px);
+    padding: 2rem 2rem 0 2rem;
+    margin-left: 22.138rem;
+    overflow-x: hidden;
+}
+
+#left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 500px;
+    min-width: 318px;
+    width: 31.5%;
+}
+
+#right-section {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: auto;
+    padding: 2rem 0 0 2rem;
+    z-index: 900;
+}
+
+#right-section.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 20;
+}
+
+#add-contact-btn-big {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    max-height: 50px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: var(--fs-21);
+    font-weight: 700;
+    color: var(--clr-200);
+    background-color: var(--clr-700);
+    text-wrap: nowrap;
+    cursor: pointer;
+    width: 90%;
+    align-self: center;
+    margin: 12px;
+}
+
+#add-contact-btn-big:hover {
+    background-color: var(--clr-500);
+}
+
+.current-btns {
+    display: flex;
+    justify-content: start;
+    gap: 13px;
+}
+
+#current-edit-responsive, #current-delete-responsive,
+#current-edit, #current-delete {
+    height: 50px;
+    width: 120px;
+    border: none;
+    border-radius: 25px;
+    font-size: var(--fs-16);
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#current-edit-responsive:hover, #current-delete-responsive:hover,
+#current-edit:hover, #current-delete:hover {
+    color: var(--clr-500);
+}
+
+.btns-lighbox {
+    display: flex;
+    gap: 24px;
+}
+
+#create-contact-btn, #create-btn,
+#saveBtn, #cancel-btn, #deleteBtn {
+    display: flex;
+    gap: 4px;
+    padding: 1rem;
+    border: 1px solid var(--clr-700);
+    border-radius: 10px;
+    font-size: var(--fs-21);
+    font-weight: 700;
+    color: var(--clr-200);
+    background-color: var(--clr-700);
+    cursor: pointer;
+}
+
+.button-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+#create-contact-btn:hover, #saveBtn:hover {
+    background-color: var(--clr-500);
+    border: 1px solid var(--clr-500);
+}
+
+#create-btn img, #saveBtn img {
+    height: 20px;
+    width: 20px;
+    align-self: center;
+}
+
+#cancel-btn, #deleteBtn {
+    color: var(--clr-700);
+    background-color: var(--clr-200);
+}
+
+#cancel-btn:hover, #deleteBtn:hover {
+    border: 1px solid var(--clr-500);
+    color: var(--clr-500);
+}
+
+#responsive-small-edit, #responsive-small-add {
+    position: absolute;
+    top: -100px;
+}
+
+#contacts-list-wrapper {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.list-alphabet {
+    height: min-content;
+    padding: 1rem;
+    font-size: var(--fs-20);
+}
+
+.split-list-line {
+    padding: 0;
+    margin: 4px;
+    border: 1px solid var(--clr-300);
+}
+
+.list-contact-wrapper {
+    display: flex;
+    gap: 35px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.choosen,
+.list-contact-wrapper:hover {
+    border-radius: 10px;
+    background-color: var(--clr-700);
+    color: var(--clr-200);
+}
+
+.initial-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    font-size: var(--fs-16);
+    color: var(--clr-200);
+    border: 2px solid var(--clr-200);
+}
+
+.list-contact-information {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.list-name {
+    font-size: var(--fs-20);
+    text-wrap-mode: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-email {
+    font-size: var(--fs-16);
+    color: var(--clr-500);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-divider {
+    font-weight: bold;
+    color: #505060;
+    margin: 16px 0 4px 6px;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.contact-details-haeder {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 30px;
+    font-size: var(--fs-27);
+}
+
+#back-icon {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.split-contact-header {
+    height: 59px;
+    border: 3px solid var(--clr-500);
+    border-radius: 2px;
+}
+
+#showed-current-contact {
+    flex-direction: column;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.current-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 54px;
+}
+
+.current-icon, #current-icon,
+#edit-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    font-size: var(--fs-47);
+    color: var(--clr-200);
+    background-color: var(--clr-300);
+}
+
+.current-icon {
+    height: 79.07px;
+    width: 79.07px;
+    padding: 1rem;
+}
+
+#current-name {
+    font-size: var(--fs-36);
+    font-weight: 700;
+}
+
+.current-information {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 1rem 0;
+}
+
+.current-information a, .current-information a:visited {
+    font-size: var(--fs-16);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.current-bottom p {
+    font-size: var(--fs-20);
+}
+
+.current-bottom span {
+    font-size: var(--fs-16);
+    font-weight: 700;
+}
+
+#current-mail {
+    color: var(--clr-500);
+}

@@ -1,0 +1,14 @@
+@media (max-width: 1100px) {
+    #sidebar-footer {
+        display: none;
+    }
+
+    .help-main {
+        margin: 0;
+        padding: 40px 40px 8vh 40px;
+    }
+
+    .floating-back-arrow {
+        top: 100px;
+    }
+}

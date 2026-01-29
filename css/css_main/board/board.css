@@ -1,0 +1,266 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.board-main {
+    margin-left: 22.138rem;
+    padding: 4rem;
+    padding-bottom: 21.92px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 32px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "to-do in-progress await done"
+        "to-do-tasks in-progress-tasks await-tasks done-tasks";
+    gap: 10px;
+
+    flex: 1;
+}
+
+.headline-board {
+    color: black;
+}
+
+#add-task-button, #add-task-button-responsive {
+    background-color: var(--clr-700);
+    color: var(--clr-200);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--fs-20);
+    white-space: nowrap;
+}
+
+.add-task-btn {
+    cursor: pointer;
+    color: var(--clr-700);
+    border: 2px solid var(--clr-700);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 9px;
+    padding: 6.82px 6.05px;
+    padding-top: 6.2px;
+    font-size: 15px;
+    position: relative;
+}
+
+.responsive-show {
+    display: none;
+}
+
+#overlay-close, .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--clr-700);
+}
+
+#overlay-close:hover, .close-btn:hover {
+    background-color: var(--clr-300);
+    color: red;
+    border-radius: 100%;
+}
+
+.overlay-actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.overlay-actions button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-200);
+    gap: 6px;
+    color: var(--clr-700);
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.overlay-actions button:hover {
+    color: var(--clr-500);
+}
+
+#responsive-link-add-task{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.progress-bar-container {
+    background-color: var(--clr-200);
+    height: 6px;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 50%;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--clr-500);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.task-count {
+    font-size: 14px;
+    color: black;
+    text-wrap-mode: nowrap;
+}
+
+.progress-bar-task-conter-div {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin: 16px 0;
+    align-items: center;
+}
+
+#search-input {
+    height: 48px;
+    padding: 0px 12px;
+    border: 1px solid var(--clr-300);
+    border-radius: 10px;
+    background-image: url("../../../assets/img/search.png");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+}
+
+#search-input::placeholder {
+    color: #d1d1d1;
+}
+
+.search-task-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+#no-results-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(169 169 169 / 70%);
+    padding: 16px;
+    align-self: center;
+    justify-self: center;
+    color: red;
+    font-size: var(--fs-21);
+    margin-left: 232px;
+}
+
+@media (max-width: 1100px) {
+    #no-results-message {
+        margin-left: 0;
+    }
+}
+
+.add-task-link {
+    background: none;
+    color: rgb(255, 255, 255, 0.5);
+}
+
+.add-task-link img {
+    filter: contrast(1);
+}
+
+.board-link, .board-link:hover {
+    background-color: var(--clr-900);
+    color: rgb(255, 255, 255);
+}
+
+.board-link img {
+    filter: contrast(1.5);
+}
+
+.assigned-initials_priority-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.assigned-initials {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0;
+}
+
+.initials-task {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--clr-500);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    margin-left: -10px;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.task-card:hover .initials-extra {
+    animation: coinSpin 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    background-color: #878787;
+}
+
+@keyframes coinSpin {
+    20% {
+        transform: rotateY(360deg);
+    }
+
+    40% {
+        transform: rotateY(720deg);
+    }
+
+    60% {
+        transform: rotateY(1080deg);
+    }
+
+    80% {
+        transform: rotateY(1260deg);
+    }
+
+    100% {
+        transform: rotateY(1440deg);
+    }
+}
